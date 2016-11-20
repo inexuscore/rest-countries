@@ -1,0 +1,79 @@
+<div class="row">
+    <div class="col-md-12">
+        <h1><i class="fa fa-globe"></i> {{country.name}}</h1>
+
+        <div class="row">
+            <div class="col-md-6">
+                <p>
+                    <strong>Capital</strong> {{country.capital}} <br>
+                    <strong>Population</strong> {{country.population | number}} <br>
+                    <strong>Region</strong> {{country.region}} <br>
+                    <strong>Sub-region</strong> {{country.subregion}} <br>
+                    <strong>Relevance</strong> {{country.relevance}} <br>
+                    <strong>Native Name</strong> {{country.nativeName}} <br>
+                </p>
+            </div>
+            <div class="col-md-6">
+                <p>
+                    <strong>Numeric Code</strong> {{country.numericCode}} <br>
+                    <strong>Alpha 2 Code</strong> {{country.alpha2Code}} <br>
+                    <strong>Alpha 3 Code</strong> {{country.alpha3Code}} <br>
+                    <strong>Area</strong> {{country.area}} <br>
+                    <strong>Demonym</strong> {{country.demonym}} <br>
+                    <strong>Gini</strong> {{country.gini}}
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <h4><i class="fa fa-language"></i> Alt Spellings</h4>
+                <ul>
+                    <li ng-repeat="item in country.altSpellings">{{item}}</li>
+                </ul>
+
+                <h4><i class="fa fa-map"></i> Borders</h4>
+                <ul>
+                    <li ng-repeat="item in country.borders">{{item}}</li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h4><i class="fa fa-money"></i> Currencies</h4>
+                <ul>
+                    <li ng-repeat="item in country.currencies">{{item}}</li>
+                </ul>
+
+                <h4><i class="fa fa-language"></i> Languages</h4>
+                <ul>
+                    <li ng-repeat="item in country.languages">{{item}}</li>
+                </ul>
+
+                <h4><i class="fa fa-map-marker"></i> Geolocation</h4>
+                <ul>
+                    <li ng-repeat="item in country.latlng">{{item}}</li>
+                </ul>
+
+                <h4><i class="fa fa-phone"></i> Calling Codes</h4>
+                <ul>
+                    <li ng-repeat="item in country.callingCodes">{{item}}</li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h4><i class="fa fa-clock-o"></i> Time Zones</h4>
+                <ul>
+                    <li ng-repeat="item in country.timezones">{{item}}</li>
+                </ul>
+
+                <h4> Top Level Domain</h4>
+                <ul>
+                    <li ng-repeat="item in country.topLevelDomain">{{item}}</li>
+                </ul>
+
+                <h4><i class="fa fa-language"></i> Translations</h4>
+                <ul>
+                    <li ng-repeat="item in country.translations">{{item}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

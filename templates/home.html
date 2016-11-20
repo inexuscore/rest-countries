@@ -1,0 +1,100 @@
+<div class="row">
+	<div class="col-md-12">
+		<div class="jumbotron text-center">
+			<h1>REST Counrties</h1>
+			<p>Get information about countries via a RESTful API</p>
+		</div>
+
+		<div class="content-wrap">
+			<form class="form-horizontal" role="form">
+				<div class="form-group">
+					<div class="col-md-4" style="padding-right: 0">
+						<input type="text" class="form-control" placeholder="Enter a capital city" ng-keyup="$event.keyCode == 13 && getCapitalCity()"
+							ng-model="capitalCity">
+					</div>
+					<div class="col-md-2">
+						<button type="button" class="btn btn-primary" ng-click="getCapitalCity()">
+                                <i class="fa fa-search"></i> GO
+                            </button>
+					</div>
+				</div>
+			</form>
+
+			<h1><i class="fa fa-globe"></i> {{countryInfo.name}}</h1>
+
+			<div class="row">
+				<div class="col-md-6">
+					<p>
+						<strong>Capital</strong> {{countryInfo.capital}} <br>
+						<strong>Population</strong> {{countryInfo.population | number}} <br>
+						<strong>Region</strong> {{countryInfo.region}} <br>
+						<strong>Sub-region</strong> {{countryInfo.subregion}} <br>
+						<strong>Relevance</strong> {{countryInfo.relevance}} <br>
+						<strong>Native Name</strong> {{countryInfo.nativeName}} <br>
+					</p>
+				</div>
+				<div class="col-md-6">
+					<p>
+						<strong>Numeric Code</strong> {{countryInfo.numericCode}} <br>
+						<strong>Alpha 2 Code</strong> {{countryInfo.alpha2Code}} <br>
+						<strong>Alpha 3 Code</strong> {{countryInfo.alpha3Code}} <br>
+						<strong>Area</strong> {{countryInfo.area}} <br>
+						<strong>Demonym</strong> {{countryInfo.demonym}} <br>
+						<strong>Gini</strong> {{countryInfo.gini}}
+					</p>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-4">
+					<h4><i class="fa fa-language"></i> Alt Spellings</h4>
+					<ul>
+						<li ng-repeat="item in countryInfo.altSpellings">{{item}}</li>
+					</ul>
+
+					<h4><i class="fa fa-map"></i> Borders</h4>
+					<ul>
+						<li ng-repeat="item in countryInfo.borders">{{item}}</li>
+					</ul>
+				</div>
+				<div class="col-md-4">
+					<h4><i class="fa fa-money"></i> Currencies</h4>
+					<ul>
+						<li ng-repeat="item in countryInfo.currencies">{{item}}</li>
+					</ul>
+
+					<h4><i class="fa fa-language"></i> Languages</h4>
+					<ul>
+						<li ng-repeat="item in countryInfo.languages">{{item}}</li>
+					</ul>
+
+					<h4><i class="fa fa-map-marker"></i> Geolocation</h4>
+					<ul>
+						<li ng-repeat="item in countryInfo.latlng">{{item}}</li>
+					</ul>
+
+					<h4><i class="fa fa-phone"></i> Calling Codes</h4>
+					<ul>
+						<li ng-repeat="item in countryInfo.callingCodes">{{item}}</li>
+					</ul>
+				</div>
+				<div class="col-md-4">
+					<h4><i class="fa fa-clock-o"></i> Time Zones</h4>
+					<ul>
+						<li ng-repeat="item in countryInfo.timezones">{{item}}</li>
+					</ul>
+
+					<h4> Top Level Domain</h4>
+					<ul>
+						<li ng-repeat="item in countryInfo.topLevelDomain">{{item}}</li>
+					</ul>
+
+					<h4><i class="fa fa-language"></i> Translations</h4>
+					<ul>
+						<li ng-repeat="item in countryInfo.translations">{{item}}</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

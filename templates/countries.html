@@ -1,0 +1,26 @@
+<div class="row">
+    <div class="col-md-12">
+        <h1>Countries <small class="text-muted">{{filtered.length}}</h1>
+
+        <form role="form" class="form-horizontal">
+            <div class="form-group">
+                <div class="col-md-4">
+                    <input type="text" class="form-control" placeholder="Filter by name" ng-model="query" />
+                </div>
+            </div>
+        </form>
+
+        <div ng-repeat="item in countries | filter:query as filtered" class="country-card">
+            <h3>
+                <a href="" ui-sref="capital({ name: item.capital })">{{item.name}}</a>
+            </h3>
+            <p>
+                <strong>Capital</strong> <br>
+                <strong>Population</strong> {{item.population | number}} <br>
+                <strong>Region</strong> {{item.region}} <br>
+                <strong>Sub-region</strong> {{item.subregion}} <br>
+                <strong>Native Name</strong> {{item.nativeName}}
+            </p>
+        </div>
+    </div>
+</div>
